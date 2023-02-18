@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+## About Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web app is coded by PiyushDev.
+
+TheDevPiyush.com is a portfolio web app coded in React Js. Vanilla CSS and HTML was used for UI. The project details are fetched directly from Github, so that I don't have to manually add new projects everytime to the site.
 
 ## Available Scripts
 

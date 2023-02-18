@@ -4,7 +4,7 @@
 
 ::-webkit-scrollbar {
     width: 3px;
-    height: 8px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -67,6 +67,15 @@ body {
     border-top: 5px solid rgb(253, 255, 218);
 }
 
+
+.contentBox {
+    padding: 5px;
+    padding-left: 10px;
+    font-size: smaller;
+    border-bottom: 4px solid white;
+border-radius: 6px;
+}
+
 h2 {
     padding: 20px;
     user-select: none;
@@ -75,7 +84,8 @@ h2 {
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
 }
-h4{
+
+h4 {
     padding: 6px;
 }
 
@@ -83,7 +93,8 @@ h4{
     padding-bottom: 5px;
 
 }
-.cardContainer{
+
+.cardContainer {
     overflow: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
@@ -104,29 +115,32 @@ h4{
 .projectHeading {
     color: lightsalmon;
     font-weight: bolder;
-    padding-left: 5px
-
+    padding-left: 5px;
 }
-i{
+
+i {
     font-size: 1em;
     cursor: pointer;
 
 }
-#arrow{
-    margin-right: 3px;
-    margin-left: 3px;
+
+#arrow {
+    margin-right: 4px;
 }
-#arrow:hover{
+
+#arrow:hover {
     color: rgba(255, 255, 255, 0.2);
 }
-#arrow:active{
-    color: rgba(255, 255, 255, 0.8);
-}
-#arrow:focus{
+
+#arrow:active {
     color: rgba(255, 255, 255, 0.8);
 }
 
-.projectBody{
+#arrow:focus {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.projectBody {
     font-size: larger;
     border-bottom: 1.2px dotted white;
 
@@ -147,7 +161,8 @@ i{
     border-left: 1px solid white;
 
 }
-.contact{
+
+.contact {
     margin-top: 10px;
 }
 

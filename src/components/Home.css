@@ -399,6 +399,7 @@ textarea {
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .git {

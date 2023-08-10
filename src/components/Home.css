@@ -310,7 +310,7 @@ textarea {
 
 }
 
-@media screen and (min-width:1000px){
+@media screen and (min-width:1000px) {
     #send::after {
         content: " (Ctrl + Enter)";
     }

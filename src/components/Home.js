@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import "./Home.css"
 
-// var message = document.getElementById("message");
-// var sendBtn = document.getElementById("send");
-
-// message.addEventListener("keypress", function (event) {
-//   if (event.key === "Enter") {
-//     sendBtn.click();
-//   }
-// });
 export default class Home extends Component {
 
   constructor(props) {
@@ -203,15 +195,15 @@ export default class Home extends Component {
           <div className="logocontainer">
 
             <div className="insta">
-              <a href="https://www.instagram.com/hey.its.piyush/" target='_blank'><i id='socialicon' className="fa fa-instagram inst" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/hey.its.piyush/" rel="noreferrer" target='_blank'> <i id='socialicon' className="fa fa-instagram inst" aria-hidden="true"></i></a>
             </div>
 
             <div className="github">
-              <a href="https://github.com/thedevpiyush/" target='_blank'><i id='socialicon' className="fa fa-github git" aria-hidden="true"></i></a>
+              <a href="https://github.com/thedevpiyush/" rel="noreferrer" target='_blank'> <i id='socialicon' className="fa fa-github git" aria-hidden="true"></i></a>
             </div>
 
             <div className="fb">
-              <a href="https://www.facebook.com/heyitspiyush/" target='_blank'><i id='socialicon' className="fa fa-facebook-official fbk" aria-hidden="true"></i></a>
+              <a href="https://www.facebook.com/heyitspiyush/" rel="noreferrer" target='_blank'> <i id='socialicon' className="fa fa-facebook-official fbk" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -247,7 +239,7 @@ export default class Home extends Component {
                       document.getElementById("send").click()
                     }
                   }
-                }/>
+                } />
                 <br />
 
                 <input placeholder='Contact No. (Optional)' type="number" name="Phone Number" id="phn" onKeyDown={
@@ -256,7 +248,7 @@ export default class Home extends Component {
                       document.getElementById("send").click()
                     }
                   }
-                }/>
+                } />
                 <br />
 
                 <textarea required placeholder='Message' onKeyDown={

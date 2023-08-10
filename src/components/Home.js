@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import "./Home.css"
 
+// var message = document.getElementById("message");
+// var sendBtn = document.getElementById("send");
 
+// message.addEventListener("keypress", function (event) {
+//   if (event.key === "Enter") {
+//     sendBtn.click();
+//   }
+// });
 export default class Home extends Component {
 
   constructor(props) {
@@ -39,6 +46,7 @@ export default class Home extends Component {
   }
 
 
+
   render() {
 
     return (
@@ -56,16 +64,19 @@ export default class Home extends Component {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
-                    <a className="nav-link active fw-bold" aria-current="page" rel="noreferrer" href="#home">Home</a>
+                    <a className="nav-link active fw-bold" aria-current="page" rel="noreferrer" href="#home">|Home|</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link active fw-bold" aria-current="page" rel="noreferrer" href="#about">About</a>
+                    <a className="nav-link active fw-bold" aria-current="page" rel="noreferrer" href="#about">|About| </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link active fw-bold" rel="noreferrer" href="#project">Projects</a>
+                    <a className="nav-link active fw-bold" rel="noreferrer" href="#project">|Projects|</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link active fw-bold" rel="noreferrer" href="#form">Contact</a>
+                    <a className="nav-link active fw-bold" rel="noreferrer" href="#sociall">|Social-Medias|</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link active fw-bold" rel="noreferrer" href="#form">|Contact|</a>
                   </li>
                 </ul>
               </div>
@@ -101,7 +112,7 @@ export default class Home extends Component {
           <div className="contentBox" id='contentBox'>
             Hello, I am Piyush. I'm a self taught Coder, and still learning. I'm good in Python, React js (Web-Development), and I have made some physics based games in Unity Game Engine, using C# language.
             <p>
-              You can see or get my projects' source codes on my github account <a rel="noreferrer" href="https://github.com/thedevpiyush/" target="_blank">@TheDevPiyush
+              You can see or get my projects' source codes on my github account <a className='a' rel="noreferrer" href="https://github.com/thedevpiyush/" target="_blank">@TheDevPiyush
               </a>.
             </p>
             <p>
@@ -115,8 +126,6 @@ export default class Home extends Component {
             </p>
           </div>
         </div>
-
-
         {/* About --END -- */}
 
 
@@ -130,25 +139,40 @@ export default class Home extends Component {
           {this.state.isLoaded ?
             <div className="cardContainer" id='cardcontainer'>
               {this.state.getProjectsDetails.map((items, index = 0) =>
-                <div className="projectCard" id='projectcard'>
+
+                <div key={items.id} className="projectCard" id='projectcard'>
                   <div className="projectHeading">
-                    <h3 key={items.id}>
-                      {index + 1}.{items.name}
-                    </h3>
+
+                    {index + 1}.{items.name}
+
                   </div>
+
                   <div className="card">
 
-                    <div key={items.id} className="projectBody">
+                    <div className="projectBody">
                       {items.description}
                     </div>
                     <br />
                     <div className="live">
                       <h5>
-                        The App is live here:
+                        <strong>
+                          The App is live here:
+                        </strong>
                       </h5>
                       <br />
-                      <a key={items.id} rel="noreferrer" href={`${items.homepage}`} target="_blank">
+                      <a rel="noreferrer" className='a' href={`${items.homepage}`} target="_blank">
                         {items.homepage}
+                      </a>
+                    </div>
+                    <div className="projectsourceurl">
+                      <h5>
+                        <strong>
+                          Source code is here :
+                        </strong>
+                      </h5>
+                      <br />
+                      <a rel="noreferrer" className='a' href={`${items.html_url}`} target="_blank">
+                        {items.html_url}
                       </a>
                     </div>
                   </div>
@@ -165,8 +189,40 @@ export default class Home extends Component {
 
 
 
+
+        {/* Social Icons -- START -- */}
+        <div className="social" id='sociall'>
+          <div className="title">
+
+            <h2>
+              <u>
+                Social Media
+              </u>
+            </h2>
+          </div>
+          <div className="logocontainer">
+
+            <div className="insta">
+              <a href="https://www.instagram.com/hey.its.piyush/" target='_blank'><i id='socialicon' className="fa fa-instagram inst" aria-hidden="true"></i></a>
+            </div>
+
+            <div className="github">
+              <a href="https://github.com/thedevpiyush/" target='_blank'><i id='socialicon' className="fa fa-github git" aria-hidden="true"></i></a>
+            </div>
+
+            <div className="fb">
+              <a href="https://www.facebook.com/heyitspiyush/" target='_blank'><i id='socialicon' className="fa fa-facebook-official fbk" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        {/* Social Icons -- END -- */}
+
+
+
+
         {/* Contact Form --Start-- */}
         <div className="contact" id='contact'>
+
           <h2>
             <u>
               Contact
@@ -177,25 +233,54 @@ export default class Home extends Component {
               method="POST">
               <div className="inputs">
 
-                <input required placeholder='Full Name' name='Name' id='name' type="text" />
+                <input required placeholder='Full Name' name='Name' id='name' type="text" onKeyDown={
+                  (e) => {
+                    if (e.ctrlKey && e.key === "Enter") {
+                      document.getElementById("send").click()
+                    }
+                  }
+                } />
                 <br />
-                <input required placeholder='Email' name='Email' id='email' type="email" />
+                <input required placeholder='Email' name='Email' id='email' type="email" onKeyDown={
+                  (e) => {
+                    if (e.ctrlKey && e.key === "Enter") {
+                      document.getElementById("send").click()
+                    }
+                  }
+                }/>
                 <br />
 
-                <input placeholder='Contact No. (Optional)' type="number" name="Phone Number" id="phn" />
+                <input placeholder='Contact No. (Optional)' type="number" name="Phone Number" id="phn" onKeyDown={
+                  (e) => {
+                    if (e.ctrlKey && e.key === "Enter") {
+                      document.getElementById("send").click()
+                    }
+                  }
+                }/>
                 <br />
 
-                <textarea required placeholder='Message' type="text" name="Message" id="message" />
+                <textarea required placeholder='Message' onKeyDown={
+                  (e) => {
+                    if (e.ctrlKey && e.key === "Enter") {
+                      document.getElementById("send").click()
+                    }
+                  }
+                } type="text" name="Message" id="message" />
                 <br />
 
-                <button>
-                  Send Message
+                <button id='send'>
+                  Send
                 </button>
               </div>
             </form>
+
           </div>
+
         </div>
         {/* Contact Form --END-- */}
+
+
+
 
       </>
     );

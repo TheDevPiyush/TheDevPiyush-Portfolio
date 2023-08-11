@@ -1,16 +1,21 @@
 {
-  "short_name": "TheDevPiyush - Portfolio",
+  "short_name": "TheDevPiyush",
   "name": "TheDevPiyush - Portfolio",
   "icons": [
     {
-      "src": "TheDevPiyush-logos_black.png",
-      "type": "image/png",
+      "src": "logo512.png",
       "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "logo192.png",
+      "sizes": "192x192",
       "purpose": "any"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#000000",
+  "orientation": "any"
 }

@@ -172,8 +172,9 @@ export default class Home extends Component {
                 </div>)}
             </div> :
             <div className="text-center">
-              <div className="spinner-border text-light" role="status">
+              <div className="spinner-border text-light my-4" id='spinner' role="status">
               </div>
+              <div id='wait' >Getting projects. Please wait...</div>
             </div>}
 
         </div>

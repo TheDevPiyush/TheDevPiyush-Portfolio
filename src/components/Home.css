@@ -411,3 +411,23 @@ textarea {
     background-color: white;
     border-radius: 50%;
 }
+
+@media screen and (max-width:600px) {
+
+    #wait {
+        font-size: small;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:2000px) {
+
+    #wait {
+        font-size: large;
+    }
+}
+@media screen and (min-width:600px) and (max-width:2000px) {
+
+    #spinner {
+        scale: 1.5;
+    }
+}

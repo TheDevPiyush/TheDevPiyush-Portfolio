@@ -9,7 +9,9 @@ export default class Home extends Component {
     this.state = {
       getProjectsDetails: [],
       no: null,
-      isLoaded: false
+      isLoaded: false,
+      prorgessValue: null,
+      contentLoaded: false
     }
   }
   componentDidMount() {
@@ -18,10 +20,20 @@ export default class Home extends Component {
 
   getProjects = async () => {
     let url = "https://api.github.com/users/thedevpiyush/repos"
+    this.setState({ prorgessValue: "10%" })
     let data = await fetch(url)
     let jsonData = await data.json()
+    this.setState({ prorgessValue: "30%" })
     this.setState({ getProjectsDetails: jsonData })
-    this.setState({ no: jsonData.length, isLoaded: true })
+    this.setState({ prorgessValue: "70%" })
+    this.setState({ prorgessValue: "100%" })
+
+    setTimeout(() => {
+      this.setState({ no: jsonData.length })
+      this.setState({ isLoaded: true })
+
+    }, 1500);
+
   }
 
   next = () => {
@@ -174,7 +186,7 @@ export default class Home extends Component {
             <div className="text-center">
               <div className="spinner-border text-light my-4" id='spinner' role="status">
               </div>
-              <div id='wait' >Getting projects. Please wait...</div>
+              <div id='wait' >Getting projects. Please wait... {this.state.prorgessValue}</div>
             </div>}
 
         </div>

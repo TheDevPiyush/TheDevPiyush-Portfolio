@@ -96,7 +96,7 @@ export default class Home extends Component {
           <div className="homeBox">
             <h4 className='fw-bold'>Welcome to TheDevPiyush</h4>
             <p>I help Spider-Man with his web shooters, or you can simply call me <strong>
-              Web-Designer.
+              Web-Developer.
             </strong>
             </p>
           </div>
@@ -114,19 +114,21 @@ export default class Home extends Component {
             </u>
           </h2>
           <div className="contentBox" id='contentBox'>
-            Hello, I am Piyush. I'm a self taught Coder, and still learning. I'm good in Python, React js (Web-Development), and I have made some physics based games in Unity Game Engine, using C# language.
+            Hello, I am Piyush. I'm a self taught Programmer, and still learning. I'm good in Python, Java, C, C++ and especially in <strong>React-js (Web-Development)</strong>, and I have made some physics based games in Unity Game Engine, using C# language.
             <p>
               You can see or get my projects' source codes on my github account <a className='a' rel="noreferrer" href="https://github.com/thedevpiyush/" target="_blank">@TheDevPiyush
               </a>.
             </p>
             <p>
-              I'll be creating more complex and useful projects in future so make sure to follow me on github.
+              I'll be creating more complex and useful projects in future, so make sure to follow me on github.
             </p>
             <h5>
-              This site automatically fetches projects from my github.
+              <u>
+                This site automatically fetches projects from my github.
+              </u>
             </h5>
             <p>
-              Here are all my projects which are available on my github.
+              Here are all my projects which are available on GitHub, their live working links and their source code links are provided respectively.
             </p>
           </div>
         </div>
@@ -157,25 +159,26 @@ export default class Home extends Component {
                       {items.description}
                     </div>
                     <br />
+
+
                     <div className="live">
-                      <h5>
-                        <strong>
-                          The App is live here:
-                        </strong>
-                      </h5>
+                      <div id='titleLive'>
+                        The App is live here:
+                      </div>
                       <br />
-                      <a rel="noreferrer" className='a' href={`${items.homepage}`} target="_blank">
+                      <a rel="noreferrer" className='a cardLinks liveLink' href={`${items.homepage}`} target="_blank">
                         {items.homepage}
                       </a>
                     </div>
+
+                    <div className="borderBetween"></div>
+
                     <div className="projectsourceurl">
-                      <h5>
-                        <strong>
-                          Source code is here :
-                        </strong>
-                      </h5>
+                      <div id='titleSource'>
+                        Source code is here :
+                      </div>
                       <br />
-                      <a rel="noreferrer" className='a' href={`${items.html_url}`} target="_blank">
+                      <a rel="noreferrer" className='a cardLinks sourceLink' href={`${items.html_url}`} target="_blank">
                         {items.html_url}
                       </a>
                     </div>

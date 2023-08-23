@@ -19,7 +19,7 @@ export default class Home extends Component {
   }
 
   getProjects = async () => {
-    let url = "https://api.github.com/users/thedevpiyush/repos"
+    let url = "https://api.github.com/users/thedevpiyush/repos" //?per_page=n
     this.setState({ prorgessValue: "10%" })
     let data = await fetch(url)
     let jsonData = await data.json()
@@ -56,39 +56,78 @@ export default class Home extends Component {
     return (
       <>
         {/* Navigation Bar --START--*/}
-        <div className='navigation'>
-          <nav className="navbar navbar-expand-lg bg-dark bg-body-tertiary" data-bs-theme="dark">
-            <div className="container-fluid">
-              <a className="navbar-brand fw-bold" style={{ "color": "white" }} rel="noreferrer" href="/">
-                TheDevPiyush
-              </a>
-              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
-                    <a className="nav-link active fw-bold" aria-current="page" rel="noreferrer" href="#home">|Home|</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active fw-bold" aria-current="page" rel="noreferrer" href="#about">|About| </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active fw-bold" rel="noreferrer" href="#project">|Projects|</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active fw-bold" rel="noreferrer" href="#sociall">|Social-Medias|</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active fw-bold" rel="noreferrer" href="#form">|Contact|</a>
-                  </li>
-                </ul>
+        <div className="navigationParent">
+          <div className='navigation'>
+            <nav className="navbar navbar-expand-lg bg-dark bg-body-tertiary" data-bs-theme="dark">
+              <div className="container-fluid">
+                <a className="navbar-brand fw-bold" style={{ "color": "white" }} rel="noreferrer" href="/">
+                  TheDevPiyush
+                </a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li className="nav-item">
+                      <a className="nav-link active fw-bold" aria-current="page" rel="noreferrer" href="#home">|Home|</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link active fw-bold" aria-current="page" rel="noreferrer" href="#about">|About| </a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link active fw-bold" rel="noreferrer" href="#project">|Projects|</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link active fw-bold" rel="noreferrer" href="#sociall">|Social-Medias|</a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link active fw-bold" rel="noreferrer" href="#form">|Contact|</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </nav>
+            </nav>
+          </div>
         </div>
         {/* Navigation Bar --END--*/}
 
+        {/* BOTTOM NAVIGATOR --START-- */}
+
+        <div className="bottomnav">
+          <div className="navBtn">
+            <a href="#home">
+              <div className="navlogo"><i class="fa fa-home" aria-hidden="true"></i></div>
+              <div className="text">Home</div>
+            </a>
+          </div>
+          <div className="navBtn">
+            <a href="#about">
+              <div className="navlogo"><i class="fa-solid fa-user"></i></div>
+              <div className="text">About</div>
+            </a>
+          </div>
+          <div className="navBtn">
+            <a href="#project">
+              <div className="navlogo"><i class="fa-brands fa-github"></i></div>
+              <div className="text">Projects</div>
+            </a>
+          </div>
+          <div className="navBtn">
+            <a href="#sociall">
+              <div className="navlogo"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+              <div className="text">Social</div>
+            </a>
+          </div>
+          <div className="navBtn">
+            <a href="#contact">
+              <div className="navlogo"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+              <div className="text">Contact</div>
+            </a>
+          </div>
+        </div>
+
+
+        {/* BOTTOM NAVIGATOR --END-- */}
 
 
         {/* Home --START--*/}
